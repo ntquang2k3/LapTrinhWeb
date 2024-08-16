@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LTW_BANLAPTOP_DOAN" Class="DB_BanLaptopDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-2K7AEF7\SQLEXPRESS01;Initial Catalog=LTW_BANLAPTOP_DOAN;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LTW_BANLAPTOP_DOANConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CHITIETDONHANG" Member="CHITIETDONHANGs">
+    <Type Name="CHITIETDONHANG">
+      <Column Name="MADH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MALAP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="DONHANG_CHITIETDONHANG" Member="DONHANG" ThisKey="MADH" OtherKey="MADH" Type="DONHANG" IsForeignKey="true" />
+      <Association Name="LAPTOP_CHITIETDONHANG" Member="LAPTOP" ThisKey="MALAP" OtherKey="MALAP" Type="LAPTOP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINTUC" Member="TINTUCs">
+    <Type Name="TINTUC">
+      <Column Name="MATIN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TIEUDETIN" Type="System.String" DbType="NVarChar(700)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NVarChar(700)" CanBeNull="true" />
+      <Column Name="NGAYDANG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ANHTIN" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MLTIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LOAITIN_TINTUC" Member="LOAITIN" ThisKey="MLTIN" OtherKey="MLTIN" Type="LOAITIN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DONHANG" Member="DONHANGs">
+    <Type Name="DONHANG">
+      <Column Name="MADH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NGAYGIAO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NGAYDAT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DATHANHTOAN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TINHTRANGGIAO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MAKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DONHANG_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MADH" OtherKey="MADH" Type="CHITIETDONHANG" />
+      <Association Name="KHACHHANG_DONHANG" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HANGMAY" Member="HANGMAYs">
+    <Type Name="HANGMAY">
+      <Column Name="MAHANG" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENHANG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HANGMAY_LAPTOP" Member="LAPTOPs" ThisKey="MAHANG" OtherKey="MAHANG" Type="LAPTOP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAIKHOAN" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MATKHAU" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PHANQUYEN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="KHACHHANG_DONHANG" Member="DONHANGs" ThisKey="MAKH" OtherKey="MAKH" Type="DONHANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LAPTOP" Member="LAPTOPs">
+    <Type Name="LAPTOP">
+      <Column Name="MALAP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENLAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MATINHTRANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GIABAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAYCAPNHAT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ANHBIA" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SOLUONGTON" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAHANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MANSX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MOI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LAPTOP_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MALAP" OtherKey="MALAP" Type="CHITIETDONHANG" />
+      <Association Name="HANGMAY_LAPTOP" Member="HANGMAY" ThisKey="MAHANG" OtherKey="MAHANG" Type="HANGMAY" IsForeignKey="true" />
+      <Association Name="NHASX_LAPTOP" Member="NHASX" ThisKey="MANSX" OtherKey="MANSX" Type="NHASX" IsForeignKey="true" />
+      <Association Name="TINHTRANGMAY_LAPTOP" Member="TINHTRANGMAY" ThisKey="MATINHTRANG" OtherKey="MATINHTRANG" Type="TINHTRANGMAY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAITIN" Member="LOAITINs">
+    <Type Name="LOAITIN">
+      <Column Name="MLTIN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TLTIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LOAITIN_TINTUC" Member="TINTUCs" ThisKey="MLTIN" OtherKey="MLTIN" Type="TINTUC" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHASX" Member="NHASXes">
+    <Type Name="NHASX">
+      <Column Name="MANSX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENNSX" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NHASX_LAPTOP" Member="LAPTOPs" ThisKey="MANSX" OtherKey="MANSX" Type="LAPTOP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINHTRANGMAY" Member="TINHTRANGMAYs">
+    <Type Name="TINHTRANGMAY">
+      <Column Name="MATINHTRANG" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENTINHTRANG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TINHTRANGMAY_LAPTOP" Member="LAPTOPs" ThisKey="MATINHTRANG" OtherKey="MATINHTRANG" Type="LAPTOP" />
+    </Type>
+  </Table>
+</Database>

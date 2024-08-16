@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DALTW_TL_BanLaptop.Models.TINTUC>
+
+@{
+    ViewBag.Title = "TTTheoLoai";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<h2 style="color:red">@ViewBag.TenTT</h2>
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="display: flex; width: 100%;">
+
+                <div style="flex: 0 0 40%;">
+                    @*<img src="/Images_KTL2/@Html.DisplayFor(modelItem => item.ANHTIN)" style="width: 40%; max-width: 40px; height: auto;" />*@
+                    <center><img src="/HinhAnhSP/@item.ANHTIN" style="width: 171px; height: 160px;" onmouseover="doiMauKhung(this, true)" onmouseout="doiMauKhung(this, false)"  /></center>
+                </div>
+
+                <div style="flex: 0 0 60%;">
+                    @Html.DisplayFor(modelItem => item.TIEUDETIN) <hr />
+                    @Html.DisplayFor(modelItem => item.NOIDUNG)
+                    @Html.DisplayFor(modelItem => item.NGAYDANG)
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+<script>
+    function doiMauKhung(element, hienThi) {
+
+        element.style.border = hienThi ? "2px solid red" : "none";
+    }
+</script>
+
+
+
+

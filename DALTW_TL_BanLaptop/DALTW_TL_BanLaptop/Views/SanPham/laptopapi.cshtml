@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DALTW_TL_BanLaptop.Models.LAPTOP>
+
+@{
+    ViewBag.Title = "laptopapi";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>laptop</h2>
+
+<button type="button" id="btnGetSanPham">lap top</button>
+<div class="row">
+    <div class="col-12">
+        <div class="row brand-row">
+            <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+        $('#btnGetSanPham').click(() => {
+            $.ajax({
+                type: 'GET',
+                url: '/api/sanphamapi',
+                success: (responses) => {
+                    // Clear existing content in the brand-row
+                    $('.brand-row').empty();
+
+                    for (var i = 0; i < responses.length; i++) {
+                        const spRow = responses[i];
+                        // Tạo đường dẫn đến ảnh từ spRow.Anh
+                        const imagePath = '/HinhAnhSP/' + spRow.Anh;
+                        const maLap = spRow.maSP;
+
+                        // Tạo HTML với đường dẫn hình ảnh và tên sản phẩm
+                        const strHTML = '<div class="col-3 pt-3 pb-4 border">' +
+                            '<img style="width:200px; height:250px" src="' + imagePath + '" alt="Alternate Text" />' +
+                            '<p>' + spRow.TenSP + '</p>' + '<a href="/SanPham/XemChiTietSanPham?maLap=' + maLap + '">Chi Tiết</a></div>';
+
+                        // Thêm vào brand-row
+                        $('.brand-row').append(strHTML);
+                    }
+                },
+                error: (err) => { console.log(err); }
+            });
+        });
+</script>

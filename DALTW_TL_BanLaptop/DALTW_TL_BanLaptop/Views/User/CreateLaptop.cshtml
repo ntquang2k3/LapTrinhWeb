@@ -1,0 +1,108 @@
+﻿@model DALTW_TL_BanLaptop.Models.LAPTOP
+
+@{
+    ViewBag.Title = "CreateLaptop";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>CreateLaptop</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>LAPTOP</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.TENLAP, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.TENLAP)
+                @Html.ValidationMessageFor(model => model.TENLAP)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MATINHTRANG, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MATINHTRANG)
+                @Html.ValidationMessageFor(model => model.MATINHTRANG)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GIABAN, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.GIABAN)
+                @Html.ValidationMessageFor(model => model.GIABAN)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOTA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MOTA)
+                @Html.ValidationMessageFor(model => model.MOTA)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NGAYCAPNHAT, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.NGAYCAPNHAT)
+                @Html.ValidationMessageFor(model => model.NGAYCAPNHAT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ANHBIA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.ANHBIA)
+                @Html.ValidationMessageFor(model => model.ANHBIA)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SOLUONGTON, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.SOLUONGTON)
+                @Html.ValidationMessageFor(model => model.SOLUONGTON)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MAHANG, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MAHANG)
+                @Html.ValidationMessageFor(model => model.MAHANG)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MANSX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MANSX)
+                @Html.ValidationMessageFor(model => model.MANSX)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOI, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MOI)
+                @Html.ValidationMessageFor(model => model.MOI)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12">
+                <input type="submit" value="Create" class="btn btn-dark" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "AllLaptop")
+</div>

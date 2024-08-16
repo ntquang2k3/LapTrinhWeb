@@ -1,0 +1,126 @@
+﻿@model IEnumerable<DALTW_TL_BanLaptop.Models.KHACHHANG>
+
+@{
+    ViewBag.Title = "AllKhachHang";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@if (@ViewBag.Count != 0 && @ViewBag.txt_Search != null)
+{
+    <center><h3>Chúng tôi tìm thấy @ViewBag.Count sản phẩm dành cho bạn</h3></center>
+}
+else if (@ViewBag.txt_Search != null)
+{
+    <center><h3>Không tìm thấy sản phẩm nào</h3></center>
+}
+
+<h2 style="color:aqua">All Khách Hàng</h2>
+
+
+<table  style="width: 100%;", class="table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HOTEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYSINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIOITINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIENTHOAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TAIKHOAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MATKHAU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHANQUYEN)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HOTEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYSINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIOITINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIENTHOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAIKHOAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MATKHAU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIACHI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHANQUYEN)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "UpdateKH", new { id = item.MAKH }) |
+               
+                @Html.ActionLink("Delete", "RemoveKH", new { id = item.MAKH })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @{
+        int PrevPage = ViewBag.Page - 1;
+        if (PrevPage == 0)
+        {
+            PrevPage = 1;
+        }
+        int NextPage = ViewBag.Page + 1;
+        if (NextPage > ViewBag.NoOfPages)
+        {
+            NextPage = ViewBag.NoOfPages;
+        }
+    }
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a href="~/User/AllKhachHang?page=@PrevPage" class="page-link">PrevPage</a>
+        </li>
+        @for (int i = 0; i < ViewBag.NoOfPages; i++)
+        {
+            if (i + 1 == ViewBag.Page)
+            {
+                <li class="page-item active">
+                    <a href="~/User/AllKhachHang?txt_Seach=@ViewBag.Search&page=@(i+1)" class="page-link">@(i + 1)</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item">
+                    <a href="~/User/AllKhachHang?txt_Seach=@ViewBag.Search&page=@(i+1)" class="page-link">@(i + 1)</a>
+                </li>
+            }
+        }
+        <li class="page-item">
+            <a href="~/User/AllKhachHang?page=@NextPage" class="page-link">NextPage</a>
+        </li>
+    </ul>
+</div>

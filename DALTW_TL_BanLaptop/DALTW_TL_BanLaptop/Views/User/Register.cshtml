@@ -1,0 +1,59 @@
+﻿@model DALTW_TL_BanLaptop.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h3>Đăng ký tài khoản</h3>
+@using (Html.BeginForm("Register", "User"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.HOTEN, "Họ tên")
+            @Html.TextBoxFor(temp => temp.HOTEN, new { placeholder = "Họ tên khách hàng", @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.HOTEN, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.TAIKHOAN, "Tên tài khoản")
+            @Html.TextBoxFor(temp => temp.TAIKHOAN, new { placeholder = "Tên đăng nhập", @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.TAIKHOAN, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.MATKHAU, "Mật khẩu")
+            @Html.PasswordFor(temp => temp.MATKHAU, new { placeholder = "Mật khẩu", @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.MATKHAU, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.Label("Nhập lại mật khẩu", new {@for = "ConfirmPassWord"})
+            @Html.TextBox("ConfirmPassWord", "", new { @class = "ConfirmPassWord, form-control", type = "PassWord"})
+            @Html.ValidationMessage("ConfirmPassWord", "", new { @class = "text-danger"})
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.EMAIL, "Email")
+            @Html.TextBoxFor(temp => temp.EMAIL, new { placeholder = "Email", @class = "form-control", type = "email" })
+            @Html.ValidationMessageFor(temp => temp.EMAIL, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.DIENTHOAI, "Số điện thoại")
+            @Html.TextBoxFor(temp => temp.DIENTHOAI, new { placeholder = "Điện thoại", @class = "form-control", type = "tell" })
+            @Html.ValidationMessageFor(temp => temp.DIENTHOAI, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.NGAYSINH, "Chọn ngày sinh")
+            @Html.TextBoxFor(temp => temp.NGAYSINH, new { placeholder = "Date Of Birth", @class = "form-control", type = "date" })
+            @Html.ValidationMessageFor(temp => temp.NGAYSINH)
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.DIACHI, "Địa chỉ")
+            @Html.TextBoxFor(temp => temp.DIACHI, new { placeholder = "Địa chỉ", @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.DIACHI, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div href="@Url.Action("Register","User")">
+        <button type="submit" class="btn btn-dark">Đăng Kí</button>
+    </div>
+}

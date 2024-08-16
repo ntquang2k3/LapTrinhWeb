@@ -1,0 +1,142 @@
+﻿@model IEnumerable<DALTW_TL_BanLaptop.Models.LAPTOP>
+
+@{
+    ViewBag.Title = "AllLaptop";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@if (@ViewBag.Count != 0 && @ViewBag.txt_Search != null)
+{
+    <center><h3>Chúng tôi tìm thấy @ViewBag.Count sản phẩm dành cho bạn</h3></center>
+}
+else if (@ViewBag.txt_Search != null)
+{
+    <center><h3>Không tìm thấy sản phẩm nào</h3></center>
+}
+<h2 style="color:deeppink">All Laptop</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateLaptop")
+</p>
+@*<table class="table table-bordered table-hover">*@
+<table style="width: 80%;"  class="table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TENLAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MATINHTRANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIABAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYCAPNHAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANHBIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLUONGTON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MANSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOI)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENLAP)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.MATINHTRANG)*@
+                @if (item.TINHTRANGMAY != null)
+                {
+                    @Html.DisplayFor(modelItem => item.TINHTRANGMAY.MATINHTRANG)
+                }
+                else
+                {
+                    <span>Unknown</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIABAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOTA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.ANHBIA)*@
+                <img src="/HinhAnhSP/@item.ANHBIA" width="70%" ; height="70%" style="width: 171px; height: 81px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOLUONGTON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAHANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MANSX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOI)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "UpdateLap", new { id = item.MALAP }) |
+                @Html.ActionLink("Details", "XemChiTietLap", new { malap = item.MALAP })
+                @Html.ActionLink("Xóa", "RemoveLap", new { id = item.MALAP })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @{
+        int PrevPage = ViewBag.Page - 1;
+        if (PrevPage == 0)
+        {
+            PrevPage = 1;
+        }
+        int NextPage = ViewBag.Page + 1;
+        if (NextPage > ViewBag.NoOfPages)
+        {
+            NextPage = ViewBag.NoOfPages;
+        }
+    }
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a href="~/User/AllLaptop?page=@PrevPage" class="page-link">PrevPage</a>
+        </li>
+        @for (int i = 0; i < ViewBag.NoOfPages; i++)
+        {
+            if (i + 1 == ViewBag.Page)
+            {
+                <li class="page-item active">
+                    <a href="~/User/AllLaptop?txt_Seach=@ViewBag.Search&page=@(i+1)" class="page-link">@(i + 1)</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item">
+                    <a href="~/User/AllLaptop?txt_Seach=@ViewBag.Search&page=@(i+1)" class="page-link">@(i + 1)</a>
+                </li>
+            }
+        }
+        <li class="page-item">
+            <a href="~/User/AllLaptop?page=@NextPage" class="page-link">NextPage</a>
+        </li>
+    </ul>
+</div>

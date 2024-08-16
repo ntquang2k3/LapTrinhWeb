@@ -1,0 +1,56 @@
+﻿@model DALTW_TL_BanLaptop.Models.LAPTOP
+
+@{
+    ViewBag.Title = "XemChiTietLap";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<center><h3>Chi tiết sản phẩm</h3></center>
+<div class="card border-dark">
+    <table class="border-dark mx-3 mb-3 mt-3">
+        <tr class="text-left">
+            <td rowspan="8" width="45" %>
+                <img class="card-header" src="@Url.Content("~/HinhAnhSP/"+Model.ANHBIA)" width="100%" height="100%" alt="Image" />
+            </td>
+            <td style="color: black" width="20%"><b>Mã Sản Phẩm</b></td>
+            <td width="35%" style="font-weight:bold;color: black">@Model.MALAP</td>
+        </tr>
+        <tr class="text-left">
+            <td style="color: black"><b>Hãng máy:</b></td>
+            <td style="color: black">@Model.HANGMAY.TENHANG</td>
+        </tr>
+        <tr class="text-left">
+            <td style="color: black"><b>Công ty</b></td>
+            <td style="color: black">@Model.NHASX.TENNSX</td>
+        </tr>
+        <tr class="text-left">
+            <td style="color: black"><b>Mô tả máy :</b></td>
+            <td class="text-justify">@Model.MOTA</td>
+        </tr>
+        <tr class="text-left">
+            <td style="color: black"><b>Kho :</b></td>
+            <td class="text-justify">@Model.SOLUONGTON</td>
+        </tr>
+        <tr class="text-left">
+            <td style="color: black"><b>Ngày cập nhật :</b></td>
+            <td class="text-justify">@string.Format("{0:dd-MM-yyyy}", @Model.NGAYCAPNHAT)</td>
+        </tr>
+        <tr class="text-left">
+            <td style="color: black"><b>Tình trạng máy :</b></td>
+            <td class="text-justify">@Model.TINHTRANGMAY</td>
+        </tr>
+        <tr class="text-left">
+            <td style="color: black">Giá bán :</td>
+            <td style="font-weight:bold;color:red">@string.Format("{0:0,0}", Model.GIABAN) VND</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="@Url.Action("ThemGioHang", "GioHang", new { ms = Model.MALAP, strURL = Request.Url.ToString() })">
+                    <input type="submit" value="Thêm vào giỏ hàng" class="btn btn-dark" />
+                </a>
+                <a href="~/SanPham/ShowAllSanPham?page=1">
+                    <input type="submit" value="Mua Tiếp" class="btn btn-dark">
+                </a>
+            </td>
+    </table>
+</div>

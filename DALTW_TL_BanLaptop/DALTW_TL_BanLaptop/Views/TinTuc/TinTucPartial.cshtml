@@ -1,0 +1,11 @@
+﻿@model IEnumerable < DALTW_TL_BanLaptop.Models.LOAITIN >
+@foreach (var item in Model)
+{
+    <li class="list-group-item">
+        <a href="/TinTuc/TTTheoLoai/@item.MLTIN" style="text-transform:uppercase; text-decoration:none;">
+            @Html.DisplayFor(modelItem => item.TLTIN)
+        </a>
+    </li>
+}
+
+

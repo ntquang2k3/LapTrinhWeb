@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DALTW_TL_BanLaptop.Models.DONHANG>
+
+@{
+    ViewBag.Title = "donhangapi";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<h2>donhangapi</h2>
+<button type="button" id="btnGetDonHang">Get DonHang</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã hóa đơn</th>
+            <th>Ngày giao</th>
+            <th>Ngày đặt</th>
+            <th>Đã thanh toán</th>
+            <th>Tình trạng giao</th>
+            <th>Mã khách hàng</th>
+        </tr>
+    </thead>
+    <tbody class="brand-row"></tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(() => {
+        $('#btnGetDonHang').click(() => {
+            $.ajax({
+                type: 'GET',
+                //url: '/api/AjaxSanPham', // Thay thế 'ControllerName' bằng tên thực tế của Controller
+                url: '/AjaxSanPham/donhangapi',
+                success: (responses) => {
+                    // Clear existing content in the brand-row
+                    $('.brand-row').empty();
+
+                    for (var i = 0; i < responses.length; i++) {
+                        const dhRow = responses[i];
+                        const strHTML = '<tr><td>' + dhRow.MaDH + '</td><td>'
+                            + dhRow.NgayGiao + '</td><td>' + dhRow.NgayDat + '</td><td>'
+                            + dhRow.DaThanhToan + '</td><td>' + dhRow.TinhTrangGiao + '</td><td>'
+                            + dhRow.MaKH + '</td></tr>';
+                        // Thêm vào brand-row
+                        $('.brand-row').append(strHTML);
+                    }
+                },
+                error: (err) => { console.log(err); }
+            });
+        });
+    });
+</script>

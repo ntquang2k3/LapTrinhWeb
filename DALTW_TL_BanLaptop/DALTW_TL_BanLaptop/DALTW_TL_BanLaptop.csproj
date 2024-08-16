@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32EE1433-0D32-493D-B524-FD1EC1B2D0ED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DALTW_TL_BanLaptop</RootNamespace>
+    <AssemblyName>DALTW_TL_BanLaptop</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Laptop.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Images_Layout1\Acer1.JPG" />
+    <Content Include="Images_Layout1\Acer2.JPG" />
+    <Content Include="Images_Layout1\Acer3.JPG" />
+    <Content Include="Images_Layout1\App&amp;Game\AG1.JPG" />
+    <Content Include="Images_Layout1\App&amp;Game\AG2.JPG" />
+    <Content Include="Images_Layout1\Apple1.JPG" />
+    <Content Include="Images_Layout1\Apple2.JPG" />
+    <Content Include="Images_Layout1\Apple3.JPG" />
+    <Content Include="Images_Layout1\Asus1.JPG" />
+    <Content Include="Images_Layout1\Asus2.JPG" />
+    <Content Include="Images_Layout1\Asus3.JPG" />
+    <Content Include="Images_Layout1\Asus4.JPG" />
+    <Content Include="Images_Layout1\BackgroundMenu.gif" />
+    <Content Include="Images_Layout1\Banner\Banner1.jpg" />
+    <Content Include="Images_Layout1\Banner\Banner2.jpg" />
+    <Content Include="Images_Layout1\Banner\Banner3.jpg" />
+    <Content Include="Images_Layout1\Banner\Banner4.jpg" />
+    <Content Include="Images_Layout1\Banner_bg.jpg" />
+    <Content Include="Images_Layout1\Bphone1.JPG" />
+    <Content Include="Images_Layout1\Bphone2.JPG" />
+    <Content Include="Images_Layout1\Bphone3.JPG" />
+    <Content Include="Images_Layout1\Cart.JPG" />
+    <Content Include="Images_Layout1\CS1.JPG" />
+    <Content Include="Images_Layout1\CS2.JPG" />
+    <Content Include="Images_Layout1\CS3.JPG" />
+    <Content Include="Images_Layout1\Dell1.JPG" />
+    <Content Include="Images_Layout1\Dell2.JPG" />
+    <Content Include="Images_Layout1\Dell3.JPG" />
+    <Content Include="Images_Layout1\Dell4.JPG" />
+    <Content Include="Images_Layout1\Dell6.JPG" />
+    <Content Include="Images_Layout1\ForGame\FG1.JPG" />
+    <Content Include="Images_Layout1\ForGame\FG2.JPG" />
+    <Content Include="Images_Layout1\ForGame\FG3.JPG" />
+    <Content Include="Images_Layout1\GalaxyA6.JPG" />
+    <Content Include="Images_Layout1\GalaxyA9.JPG" />
+    <Content Include="Images_Layout1\GalaxyJ5.JPG" />
+    <Content Include="Images_Layout1\HP1.JPG" />
+    <Content Include="Images_Layout1\HP2.JPG" />
+    <Content Include="Images_Layout1\HP3.JPG" />
+    <Content Include="Images_Layout1\Iphone4S.JPG" />
+    <Content Include="Images_Layout1\Iphone5S.JPG" />
+    <Content Include="Images_Layout1\Iphone6p.JPG" />
+    <Content Include="Images_Layout1\Iphone8p.JPG" />
+    <Content Include="Images_Layout1\KhuyenMai\KM1.JPG" />
+    <Content Include="Images_Layout1\KhuyenMai\KM2.JPG" />
+    <Content Include="Images_Layout1\KhuyenMai\KM3.JPG" />
+    <Content Include="Images_Layout1\KhuyenMai\KM4.JPG" />
+    <Content Include="Images_Layout1\KhuyenMai\KM5.JPG" />
+    <Content Include="Images_Layout1\LGG7.JPG" />
+    <Content Include="Images_Layout1\Loa1.JPG" />
+    <Content Include="Images_Layout1\Loa2.JPG" />
+    <Content Include="Images_Layout1\Loa3.JPG" />
+    <Content Include="Images_Layout1\LogoFpt.png" />
+    <Content Include="Images_Layout1\Lonovo1.JPG" />
+    <Content Include="Images_Layout1\Lonovo2.JPG" />
+    <Content Include="Images_Layout1\Lonovo3.JPG" />
+    <Content Include="Images_Layout1\Lonovo4.JPG" />
+    <Content Include="Images_Layout1\Menu_bg.jpg" />
+    <Content Include="Images_Layout1\MotoE5.JPG" />
+    <Content Include="Images_Layout1\MotoG7.JPG" />
+    <Content Include="Images_Layout1\MotoP30.JPG" />
+    <Content Include="Images_Layout1\N6030.JPG" />
+    <Content Include="Images_Layout1\N6300.JPG" />
+    <Content Include="Images_Layout1\N70.JPG" />
+    <Content Include="Images_Layout1\N72.JPG" />
+    <Content Include="Images_Layout1\OppoA7.JPG" />
+    <Content Include="Images_Layout1\OppoF7.JPG" />
+    <Content Include="Images_Layout1\OppoR17.JPG" />
+    <Content Include="Images_Layout1\QC.JPG" />
+    <Content Include="Images_Layout1\SDP1.JPG" />
+    <Content Include="Images_Layout1\SDP2.JPG" />
+    <Content Include="Images_Layout1\search.JPG" />
+    <Content Include="Images_Layout1\ThuThuat\TT1.JPG" />
+    <Content Include="Images_Layout1\ThuThuat\TT2.JPG" />
+    <Content Include="Images_Layout1\ThuThuat\TT3.JPG" />
+    <Content Include="Images_Layout1\TinMoi\TinMoi1.JPG" />
+    <Content Include="Images_Layout1\TinMoi\TinMoi2.JPG" />
+    <Content Include="Images_Layout1\TinMoi\TinMoi3.JPG" />
+    <Content Include="Images_Layout1\TinMoi\TinMoi4.JPG" />
+    <Content Include="Images_Layout1\TinMoi\TinMoi5.JPG" />
+    <Content Include="Images_Layout1\TN1.JPG" />
+    <Content Include="Images_Layout1\TN2.JPG" />
+    <Content Include="Images_Layout1\TN3.JPG" />
+    <Content Include="Images_Layout1\TN4.JPG" />
+    <Content Include="Models\DB_BanLaptop.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DB_BanLaptop.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="HinhAnhSP\ANH1.png" />
+    <Content Include="HinhAnhSP\ANH10.png" />
+    <Content Include="HinhAnhSP\ANH11.jpg" />
+    <Content Include="HinhAnhSP\ANH12.jpg" />
+    <Content Include="HinhAnhSP\ANH13.jpg" />
+    <Content Include="HinhAnhSP\ANH14.jpg" />
+    <Content Include="HinhAnhSP\ANH15.jpg" />
+    <Content Include="HinhAnhSP\ANH16.jpg" />
+    <Content Include="HinhAnhSP\ANH17.jpg" />
+    <Content Include="HinhAnhSP\ANH18.png" />
+    <Content Include="HinhAnhSP\ANH19.png" />
+    <Content Include="HinhAnhSP\ANH2.png" />
+    <Content Include="HinhAnhSP\ANH20.png" />
+    <Content Include="HinhAnhSP\ANH21.png" />
+    <Content Include="HinhAnhSP\ANH22.jpg" />
+    <Content Include="HinhAnhSP\ANH23.jpg" />
+    <Content Include="HinhAnhSP\ANH24.jpg" />
+    <Content Include="HinhAnhSP\ANH25.jpg" />
+    <Content Include="HinhAnhSP\ANH26.jpg" />
+    <Content Include="HinhAnhSP\ANH27.jpg" />
+    <Content Include="HinhAnhSP\ANH28.jpg" />
+    <Content Include="HinhAnhSP\ANH29.jpg" />
+    <Content Include="HinhAnhSP\ANH3.png" />
+    <Content Include="HinhAnhSP\ANH30.jpg" />
+    <Content Include="HinhAnhSP\ANH31.png" />
+    <Content Include="HinhAnhSP\ANH4.png" />
+    <Content Include="HinhAnhSP\ANH5.png" />
+    <Content Include="HinhAnhSP\ANH6.png" />
+    <Content Include="HinhAnhSP\ANH7.jpg" />
+    <Content Include="HinhAnhSP\ANH8.jpg" />
+    <Content Include="HinhAnhSP\ANH9.jpg" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\SanPham\SearchSP.cshtml" />
+    <Content Include="Views\SanPham\XemChiTietSanPham.cshtml" />
+    <Content Include="Views\HangMay\HangMayPartial.cshtml" />
+    <Content Include="Views\SanPham\ShowAllSanPham.cshtml" />
+    <Content Include="Views\SanPham\SanPhamTheoHang.cshtml" />
+    <Content Include="Views\SanPham\SanPhamTheoTinhTrangMay.cshtml" />
+    <Content Include="Views\TinhTrangMay\TinhTrangMayPartial.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\EditUser.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHangTrong.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AjaxSanPhamController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HangMayController.cs" />
+    <Compile Include="Controllers\KhachHangApiController.cs" />
+    <Compile Include="Controllers\SanPhamApiController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\ThoiTietAPIController.cs" />
+    <Compile Include="Controllers\TinhTrangMayController.cs" />
+    <Compile Include="Controllers\TinTucController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coord.cs" />
+    <Compile Include="Models\DB_BanLaptop.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_BanLaptop.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonHangChiTietViewModel.cs" />
+    <Compile Include="Models\DonHangDTO.cs" />
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\Main.cs" />
+    <Compile Include="Models\SanPham.cs" />
+    <Compile Include="Models\SanPhamDTO.cs" />
+    <Compile Include="Models\Sys.cs" />
+    <Compile Include="Models\ThoiTiet.cs" />
+    <Compile Include="Models\Weather.cs" />
+    <Compile Include="Models\Wind.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\AjaxSanPham\Index.cshtml" />
+    <Content Include="Views\AjaxSanPham\List.cshtml" />
+    <Content Include="Views\ThoiTietAPI\Index.cshtml" />
+    <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\User\CreateLaptop.cshtml" />
+    <Content Include="Views\User\UpdateLap.cshtml" />
+    <Content Include="Views\User\XemChiTietLap.cshtml" />
+    <Content Include="Views\SanPham\donhangapi.cshtml" />
+    <Content Include="Views\SanPham\laptopapi.cshtml" />
+    <Content Include="Views\User\AllDonHang.cshtml" />
+    <Content Include="Views\TinTuc\TinTucPartial.cshtml" />
+    <Content Include="Views\TinTuc\ListTT.cshtml" />
+    <Content Include="Views\TinTuc\TTTheoLoai.cshtml" />
+    <Content Include="Views\User\AllKhachHang.cshtml" />
+    <Content Include="Views\User\UpdateKH.cshtml" />
+    <Content Include="Views\User\AllLaptop.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\SanPhamApi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DB_BanLaptop.dbml.layout">
+      <DependentUpon>DB_BanLaptop.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58380</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58380/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

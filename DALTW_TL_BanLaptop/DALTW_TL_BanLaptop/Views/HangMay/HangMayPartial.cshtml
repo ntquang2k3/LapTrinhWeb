@@ -1,0 +1,10 @@
+﻿@model IEnumerable<DALTW_TL_BanLaptop.Models.HANGMAY>
+
+@foreach (var item in Model)
+{
+    <li class="list-group-item list-group-item-action">
+        <a href="~/SanPham/SanPhamTheoHang?MaHang=@item.MAHANG&page=1" style="text-transform:uppercase; text-decoration:none;">
+            @Html.DisplayFor(model => item.TENHANG)
+        </a>
+    </li>
+}

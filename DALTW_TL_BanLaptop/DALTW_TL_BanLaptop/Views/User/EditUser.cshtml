@@ -1,0 +1,44 @@
+﻿@model DALTW_TL_BanLaptop.Models.KHACHHANG
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h3 style="color:skyblue">Chỉnh sửa tài khoản</h3>
+@using (Html.BeginForm("EditUser", "User"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.HOTEN, "Họ tên")
+            @Html.TextBoxFor(temp => temp.HOTEN, new { placeholder = "Họ tên khách hàng", @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.HOTEN, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.TAIKHOAN, "Tên tài khoản")
+            @Html.TextBoxFor(temp => temp.TAIKHOAN, new { placeholder = "Tên đăng nhập", @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.TAIKHOAN, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.EMAIL, "Email")
+            @Html.TextBoxFor(temp => temp.EMAIL, new { placeholder = "Email", @class = "form-control", type = "email" })
+            @Html.ValidationMessageFor(temp => temp.EMAIL, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.DIENTHOAI, "Số điện thoại")
+            @Html.TextBoxFor(temp => temp.DIENTHOAI, new { placeholder = "Điện thoại", @class = "form-control", type = "tel" })
+            @Html.ValidationMessageFor(temp => temp.DIENTHOAI, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.PHANQUYEN, "Phân quyền")
+            @Html.TextBoxFor(temp => temp.PHANQUYEN, new { placeholder = "User", @class = "form-control", type = "text" })
+            @Html.ValidationMessageFor(temp => temp.PHANQUYEN, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div href="@Url.Action("EditUser","User")">
+        <button type="submit" class="btn btn-dark">Hoàn tất chỉnh sửa</button>
+    </div>
+}
+<a style="margin:20px" class="btn btn-dark" href="~/User/Index">Quay trở lại</a>
+

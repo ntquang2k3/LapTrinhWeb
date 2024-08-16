@@ -1,0 +1,61 @@
+﻿@model DALTW_TL_BanLaptop.Models.ThoiTiet
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<center><h3>API THỜI TIẾT</h3></center>
+<center><h3>Nguồn từ : <a href="https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=b572031e394631d71995b9cc9259daa4">Trang web openweatherapi</a></h3></center>
+<div>
+    <table class="table table-border table-dark table-hover">
+        <tr style="color: black; background-color: #ffd400;">
+            <th>
+                Kinh độ
+            </th>
+            <th>
+                Vĩ độ
+            </th>
+            <th>
+                Tầm nhìn xa (met)
+            </th>
+            <th>
+                Nhiệt độ
+            </th>
+            <th>
+                Nhiệt độ cao nhất
+            </th>
+            <th>
+                Tên Thành Phố
+            </th>
+            <th></th>
+        </tr>
+
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.coord.lon)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.coord.lat)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.visibility)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.main.temp)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.main.temp_max)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.name)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+            </td>
+        </tr>
+
+    </table>
+</div>
+

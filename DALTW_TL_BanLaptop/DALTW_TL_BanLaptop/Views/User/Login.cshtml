@@ -1,0 +1,38 @@
+﻿@model DALTW_TL_BanLaptop.Models.KHACHHANG
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container">
+    <div style="width: 50%; height: 50%; margin: 5% 0 25% 25%;">
+        <center></center><h3>Đăng nhập</h3>
+        @using (Html.BeginForm("Login", "User"))
+        {
+            <div class="row mx-auto">
+
+                <div class="col-md-12">
+                    @Html.LabelFor(t => t.TAIKHOAN, "Tên tài khoản")
+                    @Html.TextBoxFor(t => t.TAIKHOAN, new { placeholder = "Tên đăng nhập", @class = "form-control" })
+                    @Html.ValidationMessageFor(t => t.TAIKHOAN, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-12">
+                    @Html.LabelFor(t => t.MATKHAU, "Mật khẩu")
+                    @Html.PasswordFor(t => t.MATKHAU, new { placeholder = "Mật khẩu", @class = "form-control" })
+                    @Html.ValidationMessageFor(t => t.MATKHAU, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="col-md-12">
+                    @Html.ValidationSummary(true)
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-dark">Đăng nhập</button>
+                </div>
+            </div>
+
+        }
+    </div>   
+</div>
+<h5 style="color:red; text-align:center;">@ViewBag.TB</h5>

@@ -1,0 +1,135 @@
+﻿@model IEnumerable<DALTW_TL_BanLaptop.Models.DonHangChiTietViewModel>
+
+@{
+    ViewBag.Title = "AllDonHang";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@if (@ViewBag.Count != 0 && @ViewBag.txt_Search != null)
+{
+    <center><h3>Chúng tôi tìm thấy @ViewBag.Count sản phẩm dành cho bạn</h3></center>
+}
+else if (@ViewBag.txt_Search != null)
+{
+    <center><h3>Không tìm thấy sản phẩm nào</h3></center>
+}
+<h2 style="color:darkblue">Đơn Hàng</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowProductsUseReader</title>
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+
+        <table class="table table-bordered table-hover">
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().DonHang.MADH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().ChiTietDonHang.MALAP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().DonHang.MAKH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().ChiTietDonHang.SOLUONG)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().ChiTietDonHang.DONGIA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().DonHang.NGAYGIAO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().DonHang.NGAYDAT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().DonHang.DATHANHTOAN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().DonHang.TINHTRANGGIAO)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonHang.MADH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChiTietDonHang.MALAP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonHang.MAKH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChiTietDonHang.SOLUONG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChiTietDonHang.DONGIA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonHang.NGAYGIAO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonHang.NGAYDAT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonHang.DATHANHTOAN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonHang.TINHTRANGGIAO)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
+<div>
+    @{
+        int PrevPage = ViewBag.Page - 1;
+        if (PrevPage == 0)
+        {
+            PrevPage = 1;
+        }
+        int NextPage = ViewBag.Page + 1;
+        if (NextPage > ViewBag.NoOfPages)
+        {
+            NextPage = ViewBag.NoOfPages;
+        }
+    }
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a href="~/User/AllDonHang?page=@PrevPage" class="page-link">PrevPage</a>
+        </li>
+        @for (int i = 0; i < ViewBag.NoOfPages; i++)
+        {
+            if (i + 1 == ViewBag.Page)
+            {
+                <li class="page-item active">
+                    <a href="~/User/AllDonHang?txt_Seach=@ViewBag.Search&page=@(i+1)" class="page-link">@(i + 1)</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item">
+                    <a href="~/User/AllDonHang?txt_Seach=@ViewBag.Search&page=@(i+1)" class="page-link">@(i + 1)</a>
+                </li>
+            }
+        }
+        <li class="page-item">
+            <a href="~/User/AllDonHang?page=@NextPage" class="page-link">NextPage</a>
+        </li>
+    </ul>
+</div>
